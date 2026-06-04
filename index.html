@@ -1,1 +1,160 @@
 <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Güvenlik Doğrulaması</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: 420px;
+      background: white;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    button {
+      margin-top: 18px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #0b5ed7;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #084db2;
+    }
+
+    .warning {
+      display: none;
+      background: #111;
+      color: white;
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      box-sizing: border-box;
+    }
+
+    .warning-box {
+      max-width: 650px;
+      border: 2px solid #ff3333;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 0 35px #ff3333;
+      animation: pulse 1s infinite;
+    }
+
+    .warning h1 {
+      color: #ff3333;
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .warning p {
+      color: #ddd;
+      font-size: 18px;
+    }
+
+    ul {
+      text-align: left;
+      margin-top: 25px;
+      color: #eee;
+      line-height: 1.8;
+    }
+
+    .safe {
+      margin-top: 25px;
+      padding: 14px;
+      background: #1f8f4d;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #ff3333; }
+      50% { box-shadow: 0 0 40px #ff3333; }
+      100% { box-shadow: 0 0 10px #ff3333; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="loginScreen">
+    <div class="logo">🔐</div>
+    <h2>Kurumsal Güvenlik Doğrulaması</h2>
+    <p>
+      Oturum güvenliğiniz için kısa bir doğrulama gereklidir.
+      Devam etmek için aşağıdaki butona tıklayın.
+    </p>
+    <button onclick="showWarning()">Doğrulamaya Devam Et</button>
+  </div>
+
+  <div class="warning" id="warningScreen">
+    <div class="warning-box">
+      <h1>⚠️ DİKKAT!</h1>
+      <p>
+        Bir oltalama bağlantısına tıkladınız.
+      </p>
+      <p>
+        Bu sayfa, siber farkındalık eğitimi amacıyla hazırlanmış güvenli bir simülasyondur.
+      </p>
+
+      <ul>
+        <li>Gönderen adresini kontrol edin.</li>
+        <li>Kısa veya şüpheli bağlantılara dikkat edin.</li>
+        <li>Şifre, SMS kodu veya kişisel bilgi girmeyin.</li>
+        <li>Kurumsal sistemlerde şüpheli bağlantıları bildirin.</li>
+        <li>Linke tıklamadan önce adresi kontrol edin.</li>
+      </ul>
+
+      <div class="safe">
+        Herhangi bir bilgi alınmadı. Bu sadece eğitim simülasyonudur.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showWarning() {
+      document.getElementById("loginScreen").style.display = "none";
+      document.getElementById("warningScreen").style.display = "flex";
+    }
+  </script>
+
+</body>
+</html>
